@@ -12,6 +12,8 @@
 ## How to Run
 - Clone the repository
 - Open `index.html` in your browser
+  OR
+- view live at https://l-y-t-h-r-u-m.github.io/To-Do-List/
 
 ## Technologies Used
 - HTML
