@@ -1,0 +1,280 @@
+:root {
+  --bg:  #f6f1e4;
+  --card: #ec7a08;
+  --header: #f6f1e4;
+  --text: #000;
+  --tag1: #67400aff;
+  --tag2: #a85d12;
+  --tag3: #f0a960;
+}
+
+*{
+  margin:0;
+  padding:0;
+  font-family: 'Kode Mono', monospace, Helvetica, Arial,sans-serif;
+  box-sizing: border-box;
+}
+
+html{
+  transition: all 0.2s ease;
+}
+
+body{
+  margin: 0;
+  height: 100vh;
+  background: var(--bg);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 60px;
+}
+
+.card{
+  position: relative;
+  width: 420px;
+  background: var(--card);
+  border-radius:12px;
+  box-shadow: 12px 12px 1px rgba(0,0,0,.15);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.6s ease;
+}
+
+.card.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.header{
+  background: var(--header);
+  padding: 12px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: inset 0 0 0 2px var(--card);
+  border-radius: 12px 12px 0 0;
+}
+
+.menu{
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.content{
+  padding: 18px;
+}
+
+input{
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: var(--header);
+}
+
+.priority{
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.priority .text{
+  color: #fff;  
+  margin-right:8px;
+}
+
+.priority button{
+  flex: 1;
+  padding: 8px;
+  border:none;
+  cursor: pointer;
+  color: white;
+}
+
+.priority .text + button{
+  border-radius: 8px 0 0 8px;
+}
+
+.priority button:last-child{
+  border-radius: 0 8px 8px 0;
+}
+
+.high{ background: var(--tag1); }
+.medium{ background: var(--tag2); }
+.low{ background: var(--tag3);  }
+
+.add-btn{
+  margin: 14px auto;
+  display: block;
+  padding: 8px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: var(--header);
+}
+
+.sort{
+  margin-top: 14px;
+  color: white;
+}
+
+.sort label{
+  margin-right: 8px;
+}
+
+.sort select{
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  cursor: pointer;
+  background: var(--header);
+  opacity: 0.4;
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+  margin-top: 12px;
+}
+
+li{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.task-left{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+.box{
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.done .task-left span{
+  text-decoration: line-through;
+}
+
+.done{
+  opacity: .4;
+}
+
+.delete{
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.settings{
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translate(-35%);
+  background: var(--header);
+  padding: 16px;
+  box-shadow:
+  inset 0 0 0 2px var(--card),
+  8px 8px 0 rgba(0,0,0,.12);
+
+  border-radius: 12px 12px 12px 12px;
+  width: 260px;
+  display: none;
+  font-weight:500;
+}
+
+.settings .bar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.closeBtn{
+background: transparent;
+  border: none;
+  padding: 4px 6px;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+
+  color: var(--card);     
+  border-radius: 6px;
+
+  transition: background 0.4s ease, transform 0.4s ease;
+}
+
+.closeBtn:hover{
+  background: var(--card);
+  color: var(--header);      
+}
+
+.closeBtn:active{
+  transform: scale(0.9);
+}
+
+.themes{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.theme{
+  margin-top:8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.1s ease;
+}
+
+.theme:hover{
+  width:32px;
+  height:32px;
+}
+
+.theme.light{ background: #ec7a08; }
+.theme.dark{ background: #121212; }
+.theme.blue{ background: #3b82f6; }
+
+html.light{
+  --bg: #f2efe4; 
+  --card: #ec7a08;
+  --header: #f6f1e4;
+  --text: #000;
+  --input-bg: #fff5e6;
+  --priority-high: #67400aff;
+  --priority-medium: #a85d12;
+  --priority-low: #ecc195ff;
+}
+
+html.dark{ 
+  --bg: #1f1f1f;
+  --card:  #45423dff;
+  --header: #f6f1e4;
+  --text: #fff;
+  --input-bg: #2a2a2a;
+  --tag1: #25221eff;
+  --tag2: #86817c;
+  --tag3: #d6cab0;
+ }
+html.blue{ 
+  --bg: #fff5e6;
+  --card: #3b82f6;
+  --header: #c7dcffff;
+  --text: #fff;
+  --input-bg: #2a2a2a;
+  --tag1: #101C34;
+  --tag2: #3b5891ff;
+  --tag3: #85aeef;
+}
