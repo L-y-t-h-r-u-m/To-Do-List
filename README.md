@@ -1,4 +1,4 @@
-# Simple ToDo List
+# ToDo List
 
 ## Features
 - Add tasks 
